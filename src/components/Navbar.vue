@@ -184,12 +184,14 @@ ul.dropdown-menu a {
   line-height: 50px;
 }
 
+/* Tablet */
 @media screen and (max-width: 1024px) {
   ul.nav-links {
     width: 50%;
   }
 }
 
+/* Mobile */
 @media screen and (max-width: 768px) {
   ul.nav-links {
     position: absolute;
