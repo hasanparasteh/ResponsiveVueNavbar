@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar
+      name="Logo Name"
+      :navLinks="[
+        {
+          name: 'Home',
+          link: '/home',
+          dropdown: false,
+        },
+
+        { name: 'About', link: '/about', dropdown: false },
+
+        {
+          name: 'Contacts',
+          link: '/contact',
+          dropdown: true,
+          dropdownLinks: [ 
+            { name: 'A', link: '/pA', dropdown: false },
+            { name: 'B', link: '/pB', dropdown: false },
+          ],
+        },
+        {
+          name: 'Projects',
+          link: '/projects',
+          dropdown: true,
+          dropdownLinks: [ 
+            { name: 'C', link: '/pA', dropdown: false },
+            { name: 'D', link: '/pB', dropdown: false },
+          ],
+        },
+      ]"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from '@/components/Navbar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Navbar,
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
 }
 </style>
